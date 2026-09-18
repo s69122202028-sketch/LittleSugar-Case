@@ -347,6 +347,12 @@
     nav.pages button{padding:8px 12px;font-size:0.82rem;}
     .logo-tag{display:none;}
   }
+
+     /* ---- ซ่อนหมายเหตุอธิบาย discrete math (ไม่ลบโค้ด) ---- */
+    .section-sub   { display: none !important; }  /* 3 บรรทัดใต้หัวข้อทั้ง 3 หน้า */
+    .filter-note   { display: none !important; }  /* หมวด(ทั้งหมด) ∪ ... ∩ สี(ทั้งหมด) */
+    .dm-note       { display: none !important; }  /* ข้อความในวงเล็บที่จะ mark ในข้อ 2 */
+  
 </style>
 </head>
 <body>
@@ -382,7 +388,7 @@
       <div class="hero-copy">
         <div class="eyebrow">Pastel Phone Case Studio</div>
         <h1 class="display">เคสน่ารัก โทน<em>พาสเทล</em><br>สำหรับ iPhone ทุกรุ่น</h1>
-        <p>ตั้งแต่ iPhone 11 ถึง 17 รวม Pro และ Pro Max — ลายหมีน้อย ลายดอกไม้ และลายข้อความน้อย ๆ ให้เลือกครบทุกสี ทุกรุ่น</p>
+        <p class="dm-note">ตั้งแต่ iPhone 11 ถึง 17 รวม Pro และ Pro Max — ลายหมีน้อย ลายดอกไม้ และลายข้อความน้อย ๆ ให้เลือกครบทุกสี ทุกรุ่น</p> 
         <div class="hero-actions">
           <button class="btn-primary" data-goto="products">เลือกซื้อเคสทั้งหมด</button>
           <button class="btn-ghost" data-goto="products" data-scroll-cat="bear">ดูลายหมียอดฮิต</button>
@@ -429,27 +435,27 @@
           <input type="text" id="searchInput" placeholder="พิมพ์ชื่อลาย เช่น หมี, ดอกไม้...">
         </div>
 
-        <div class="filter-group">
-          <b>ลาย (เลือกได้หลายลาย = Union)</b>
+                <div class="filter-group">
+          <b>ลาย <span class="dm-note">(เลือกได้หลายลาย = Union)</span></b>
           <div id="catFilters"></div>
         </div>
 
         <div class="filter-group">
-          <b>โทนสี (Intersection กับลาย)</b>
+          <b>โทนสี <span class="dm-note">(Intersection กับลาย)</span></b>
           <div id="colorFilters"></div>
-        </div>
+        </div> 
 
         <div class="filter-group">
           <b>รุ่น iPhone</b>
           <select id="modelFilter"><option value="">ทุกรุ่น</option></select>
         </div>
 
-        <div class="filter-group">
+                <div class="filter-group">
           <label class="chk-row">
             <input type="checkbox" id="excludeClear">
-            ไม่เอาเคสใส (Difference)
+            ไม่เอาเคสใส <span class="dm-note">(Difference)</span>
           </label>
-        </div>
+        </div> 
 
         <button class="clear-filters" id="clearFiltersBtn">ล้างตัวกรองทั้งหมด</button>
         <p class="filter-note" id="filterFormula"></p>
